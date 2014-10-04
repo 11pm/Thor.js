@@ -1,9 +1,9 @@
-var controllers = {
+Controllers = {
 	
 	TestController: {
 
 		home: function(){
-			console.log('I AM AT HOME');
+			View.make('home');
 		},
 		test: function(){
 			console.log('I AM BOBO');
@@ -12,5 +12,3 @@ var controllers = {
 
 
 };
-
-Controllers = controllers;

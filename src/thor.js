@@ -14,19 +14,19 @@ var Thor = {
 		for(var i = 0; i < arguments.length; i++){
 			console.log(arguments[i]);
 		}
-	}
+	},
+	config: {
+		'view_folder': 'views'
+	},
+	dom = {}
 
 };
 
 var Controllers = {};
 
 var URL = {
-	parseUrl: function(url){
-		pathArray = window.location.href.split( '/' );
-		protocol = pathArray[0];
-		host = pathArray[2];
-		return protocol + '//' + host;
-
+	base_url: function(){
+		return window.location.host +  window.location.pathname;
 	},
 
 	to: function(url){
@@ -85,4 +85,18 @@ var Route = {
 		
 	}
 
+};
+
+var View = {
+
+	filePath: function(name){
+		var url = URL.base_url();
+		var folder = Thor.config.view_folder;
+		return url + folder + '/' + name + '.html';
+	},
+
+	make: function(name){
+		var file = this.filePath(name);
+		document.getElementById("view").innerHTML='<object type="text/html" data="' + file + '" ></object>';
+	}
 };
