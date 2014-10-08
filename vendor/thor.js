@@ -14,11 +14,8 @@ var Thor = {
 		for(var i = 0; i < arguments.length; i++){
 			console.log(arguments[i]);
 		}
-	},
-	config: {
-		'view_folder': 'views'
-	},
-	dom = {}
+	}
+
 
 };
 
@@ -87,6 +84,17 @@ var Route = {
 
 };
 
+var Xhr = {
+	
+	open: function(type, url){
+		var xhr = new XMLHttpRequest();
+		xhr.open(type, url, false);
+		xhr.send();
+		return xhr;
+	}
+
+}
+
 var View = {
 
 	filePath: function(name){
@@ -97,6 +105,7 @@ var View = {
 
 	make: function(name){
 		var file = this.filePath(name);
-		document.getElementById("view").innerHTML='<object type="text/html" data="' + file + '" ></object>';
+		console.log(Xhr.open("GET", file))
+		Thor.config.dom.innerHTML=file;
 	}
 };
