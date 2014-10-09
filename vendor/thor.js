@@ -72,9 +72,10 @@ var Route = {
 				var methods 	= URL.getRouteMethod(action);
 				var controller 	= methods[0];
 				var method 		= methods[1];
-				
+				Thor.log(controller, method)
+				Thor.log(Thor)
 				//call user defined controller
-				Controllers[controller][method]();
+				Thor.Controllers[controller][method]();
 				
 				
 			}

@@ -1,4 +1,4 @@
-Controllers = {
+Thor.Controllers = {
 	
 	TestController: {
 
