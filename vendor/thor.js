@@ -101,12 +101,13 @@ var View = {
 	filePath: function(name){
 		var url = URL.base_url();
 		var folder = Thor.config.view_folder;
-		return url + folder + '/' + name + '.html';
+		return folder + '/' + name + '.html';
 	},
 
 	make: function(name){
 		var file = this.filePath(name);
-		console.log(Xhr.open("GET", file))
-		Thor.config.dom.innerHTML=file;
+		var view = Xhr.open("GET", file);
+		console.log(Thor.config.dom)
+		Thor.config.dom.innerHTML = view.responseText;
 	}
 };

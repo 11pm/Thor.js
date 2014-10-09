@@ -5,8 +5,8 @@ Thor.Controllers = {
 		home: function(){
 			View.make('home');
 		},
-		test: function(){
-			console.log('I AM BOBO');
+		about: function(){
+			View.make('about');
 		}
 	},
 
