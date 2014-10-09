@@ -1,4 +1,5 @@
-![Thor.JS][http://i.imgur.com/yKzGBms.png "Thor S"]
+![Thor.JS](http://i.imgur.com/yKzGBms.png "Thor JS")
+
 JS MVC  Framework based on Laravel
 =======
 #Routing
