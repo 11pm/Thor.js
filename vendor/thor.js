@@ -72,8 +72,6 @@ var Route = {
 				var methods 	= URL.getRouteMethod(action);
 				var controller 	= methods[0];
 				var method 		= methods[1];
-				Thor.log(controller, method)
-				Thor.log(Thor)
 				//call user defined controller
 				Thor.Controllers[controller][method]();
 				
@@ -87,11 +85,13 @@ var Route = {
 
 var Xhr = {
 	
+	xhrObj: new XMLHttpRequest,
+
 	open: function(type, url){
-		var xhr = new XMLHttpRequest();
-		xhr.open(type, url, false);
-		xhr.send();
-		return xhr;
+		
+		this.xhrObj.open(type, url, false);
+		this.xhrObj.send();
+		return this.xhrObj;
 	}
 
 }
@@ -107,7 +107,6 @@ var View = {
 	make: function(name){
 		var file = this.filePath(name);
 		var view = Xhr.open("GET", file);
-		console.log(Thor.config.dom)
 		Thor.config.dom.innerHTML = view.responseText;
 	}
 };

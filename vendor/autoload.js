@@ -1,7 +1,7 @@
 var files = [
 	'vendor/thor.js',
 	'app/config.js',
-	'app/controllers/controllers.js',
+	'app/controllers.js',
 	'app/routes.js'
 ];
 window.onload = function(){
@@ -9,6 +9,6 @@ window.onload = function(){
 		var js = document.createElement('script');
 		js.type = 'text/javascript';
 		js.src = files[i];
-		document.body.appendChild(js);
+		document.head.appendChild(js);
 	}	
 };
