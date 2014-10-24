@@ -1,5 +1,5 @@
 Thor.config = {
 	view_folder: 'app/views',
-	dom: document.getElementById('view'),
-	
-}
+	view: document.getElementById('view'),	
+	title: document.getElementsByTagName('title')
+};

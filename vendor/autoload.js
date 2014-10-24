@@ -1,4 +1,5 @@
 var files = [
+	'vendor/handlebars.js',
 	'vendor/thor.js',
 	'app/config.js',
 	'app/controllers.js',
@@ -9,6 +10,6 @@ window.onload = function(){
 		var js = document.createElement('script');
 		js.type = 'text/javascript';
 		js.src = files[i];
-		document.head.appendChild(js);
+		document.body.appendChild(js);
 	}	
 };
