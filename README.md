@@ -30,11 +30,11 @@ Thor.Controllers = {
 #Views
 
 ```javascript
-View.make('home')
+View.make('home');
 ```
 
 ```javascript
 View.make('home', {
 	message: "Hello"
-})
+});
 ```
